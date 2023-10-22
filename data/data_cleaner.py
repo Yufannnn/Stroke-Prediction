@@ -8,22 +8,13 @@ print("Initial Data:")
 print(data.head(10))
 print("\n")
 
-# Remove rows with 'Unknown' in 'smoking_status' column
-data = data[data['smoking_status'] != 'Unknown']
-
-# Encode 'smoking_status' column
-smoking_mapping = {
-    'never smoked': 0,
-    'formerly smoked': 1,
-    'smokes': 2
-}
-data['smoking_status'] = data['smoking_status'].map(smoking_mapping)
-
 # Drop rows with 'N/A' in 'bmi' column
 data = data[data['bmi'] != 'N/A']
 
 # # Drop the 'id' column
 # data.drop(columns=['id'], inplace=True)
+
+data['gender'] = data['gender'].map({'Male':0, 'Female': 1})
 
 # Convert 'ever_married' column to binary (1 for 'Yes', 0 for 'No')
 data['ever_married'] = data['ever_married'].map({'Yes': 1, 'No': 0})
@@ -37,6 +28,17 @@ data.drop(columns=['work_type'], inplace=True)
 
 # Encode 'Residence_type' column
 data['Residence_type'] = data['Residence_type'].map({'Urban': 1, 'Rural': 0})
+
+# Remove rows with 'Unknown' in 'smoking_status' column
+data = data[data['smoking_status'] != 'Unknown']
+
+# Encode 'smoking_status' column
+smoking_mapping = {
+    'never smoked': 0,
+    'formerly smoked': 1,
+    'smokes': 2
+}
+data['smoking_status'] = data['smoking_status'].map(smoking_mapping)
 
 # Ensure 'stroke' is the last column
 cols = [col for col in data if col != 'stroke'] + ['stroke']
