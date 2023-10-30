@@ -3,7 +3,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # Load the saved Bayesian Network
-with open("saved_model.pkl", "rb") as file:
+with open("normal model/saved_model.pkl", "rb") as file:
     loaded_model = pickle.load(file)
 
 for cpd in loaded_model.get_cpds():
