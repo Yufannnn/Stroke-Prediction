@@ -1,5 +1,112 @@
-/* Basic styling for the webpage */
+/* Resetting default margins and padding */
+body, html, h1, div {
+    margin: 0;
+    padding: 0;
+}
+
+/* This ensures that the body takes the full viewport height */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    display: flex;
+    flex-direction: column;  /* Stack children vertically */
+    min-height: 100vh;  /* Minimum height is the full viewport height */
+}
+
+.content {
+    flex: 1;  /* This allows the content to grow and consume available space */
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select, input[type="number"], input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* Prediction Result Styling */
+.result-section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.result-section h2 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.result-section p {
+    font-size: 1.8em;
+    color: #e74c3c; /* This will give the prediction a red hue for emphasis. Adjust the color if needed. */
+    margin-top: 15px;
+}
+
+/* Footer styles */
+.footer {
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.footer a {
+    color: #FFD700;  /* Gold color for links */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #ffffff;  /* White color on hover */
 }

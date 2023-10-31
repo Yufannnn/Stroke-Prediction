@@ -1,5 +1,6 @@
 import requests
 
+
 def make_request(data):
     """Function to make a request and print the response."""
     response = requests.post(url, json=data)
@@ -13,20 +14,21 @@ def make_request(data):
     else:
         print("Unknown response:", json_response)
 
+
 # Define the API endpoint
 url = "http://127.0.0.1:5000/predict"
 
 # Define a sample input data
 valid_data = [
-    "Male",       # gender
-    67,           # age
-    0,            # hypertension
-    1,            # heart_disease
-    "Yes",        # ever_married
-    "Private",    # work_type
-    "Urban",      # Residence_type
-    228.69,       # avg_glucose_level
-    36.6,         # bmi
+    "Male",  # gender
+    67,  # age
+    0,  # hypertension
+    1,  # heart_disease
+    "Yes",  # ever_married
+    "Private",  # work_type
+    "Urban",  # Residence_type
+    228.69,  # avg_glucose_level
+    36.6,  # bmi
     "formerly smoked"  # smoking_status
 ]
 
@@ -34,7 +36,7 @@ print("Sending valid data...")
 make_request(valid_data)
 
 invalid_data_gender = [
-    "Non-binary",  # Invalid gender
+    None,  # Invalid gender
     67,
     0,
     1,
@@ -80,3 +82,19 @@ invalid_data_smoking_status = [
 
 print("\nSending data with invalid smoking status...")
 make_request(invalid_data_smoking_status)
+
+missing_data = [
+    None,       # Missing gender
+    67,
+    None,       # Missing hypertension
+    1,
+    "Yes",
+    "Private",
+    "Urban",
+    None,
+    36.6,
+    "never smoked"
+]
+
+print("\nSending data with some missing fields...")
+make_request(missing_data)
