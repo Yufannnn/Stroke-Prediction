@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Stroke Prediction Tool</h1>
+
+    <!-- Prediction form -->
+    <form action="/predict" method="post">
+        <!-- Add input fields for each of the required parameters -->
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+
+        <!-- Add more input fields similarly for age, hypertension, etc... -->
+
+        <input type="submit" value="Predict">
+    </form>
+
+    <!-- Display prediction result -->
+    {% if prediction %}
+        <h2>Prediction Result:</h2>
+        <p>Probability of Stroke: {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
