@@ -2,6 +2,13 @@
 
 Stroke Prediction is a project that aims to predict the likelihood of a stroke based on various input features such as age, gender, health conditions, and lifestyle factors. The model is built using a Bayesian Network and trained on data sourced from Kaggle. This README provides a comprehensive guide on how to set up, train, and verify the model.
 
+
+
+![Stroke](docs/img/Stroke.png)
+
+
+Please refer to the [full report](docs/Report.pdf) for more information about the tool and the model.
+
 ## Table of Contents
 - [Dataset](#dataset)
 - [Installation](#installation)
@@ -65,11 +72,5 @@ The dataset used for this project is sourced from [Kaggle](https://www.kaggle.co
 - `model.py`: Script to train the Bayesian Network.
 - `verifier.py`: Script to verify the accuracy of the trained model.
 - `graph.py`: Script to visualize the Bayesian Network (optional).
+- `requirements.txt`: List of Python libraries required for the project.
 
-## Contributing
-
-Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) to get started.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details

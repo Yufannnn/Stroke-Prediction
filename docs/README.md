@@ -16,6 +16,8 @@ Welcome to the user guide for the Stroke Prediction Tool. This guide will walk y
 
 The Stroke Prediction Tool uses a Bayesian network to predict the probability of a stroke. By entering certain health metrics and information about yourself, you can get an estimate of your risk.
 
+Please refer to the [full report](Report.pdf) for more information about the tool and the model.
+
 ---
 
 ## How to Use
