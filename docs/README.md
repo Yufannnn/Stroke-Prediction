@@ -1,7 +1,3 @@
-Certainly! Here's a basic outline for a `UserGuide.md` that details how to use your Stroke Prediction Tool:
-
----
-
 # Stroke Prediction Tool: User Guide
 
 Welcome to the user guide for the Stroke Prediction Tool. This guide will walk you through the process of using the tool to predict the probability of a stroke based on your input.
@@ -29,9 +25,17 @@ The Stroke Prediction Tool uses a Bayesian network to predict the probability of
    - **Gender**: Select your gender from the dropdown.
    - **Age**: Input your age.
    - **Hypertension**: Indicate whether you have hypertension.
-   - ... (Continue with the rest of the fields in the form)
-3. **Submit**: Once you've filled out all the fields, click on the "Predict" button.
-4. **View the Results**: After a brief moment, the tool will display the probability of a stroke based on the information you provided.
+   - **Heart Disease**: Indicate whether you have any heart-related diseases.
+   - **Ever Married**: Specify whether you've ever been married.
+   - **Work Type**: Choose your current or most recent type of employment from the dropdown.
+   - **Residence Type**: Indicate whether you live in an urban or rural area.
+   - **Average Glucose Level**: Input your most recent average glucose level. If unknown, it's recommended to get a test done.
+   - **BMI**: Input your Body Mass Index (BMI). If unknown, there are online calculators available, or you can consult with a healthcare professional.
+   - **Smoking Status**: Choose the option that best describes your smoking habits.
+
+3. **Submit the Form**: After filling out all the details, click on the "Predict" button.
+
+4. **Review the Results**: The tool will display a percentage indicating the predicted probability of having a stroke based on the provided details. Always consult with a healthcare professional regarding your results and potential next steps.
 
 ---
 

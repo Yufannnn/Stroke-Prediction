@@ -4,31 +4,72 @@ body, html, h1, div {
     padding: 0;
 }
 
+/* Adding keyframes for entrance animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Updated Header Section styles */
+.header-section {
+    background: linear-gradient(135deg, #4a90e2, #50e3c2);
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 0.8s ease-out forwards; /* Entrance animation */
+    transition: background 0.3s; /* Smooth transition for hover */
+}
+
+.header-section:hover {
+    background: linear-gradient(135deg, #50e3c2, #4a90e2); /* Reverse gradient on hover */
+}
+
+.header-section h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    transition: transform 0.3s; /* Smooth transition for hover */
+}
+
+.header-section h1:hover {
+    transform: scale(1.05); /* Slightly enlarge the text on hover */
+}
+
+
 /* This ensures that the body takes the full viewport height */
 body {
     display: flex;
     flex-direction: column;  /* Stack children vertically */
     min-height: 100vh;  /* Minimum height is the full viewport height */
+    background: linear-gradient(to right, #f2f4f6, #e6e9ec); /* Gradient background */
+    font-family: 'Arial', sans-serif; /* Default font */
 }
 
 .content {
     flex: 1;  /* This allows the content to grow and consume available space */
 }
 
-h1 {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 2px solid #eee;
-}
-
-form {
+/* Form and Result Section Styles */
+.form-container, .result-container {
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
     background-color: #fff;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.form-container:hover, .result-container:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 }
 
 label {
@@ -37,25 +78,66 @@ label {
     font-weight: bold;
 }
 
-select, input[type="number"], input[type="submit"] {
+select, input[type="number"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px 15px; /* Increased padding for a spacious feel */
+    margin-bottom: 20px; /* More margin for better spacing */
+    border: 1.5px solid #ccc; /* Slightly thicker border */
+    border-radius: 6px; /* Increased border radius for a rounder look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     box-sizing: border-box;
+    font-size: 1em; /* Ensuring a readable font size */
+    font-weight: 500; /* Medium font weight */
+    transition: all 0.3s ease; /* General transition for all changes */
+    outline: none; /* Remove the default browser outline */
+    color: #333; /* Darker text color for better readability */
+}
+
+select option:hover {
+    background-color: #f5f5f5; /* Light gray background on hover */
+    color: #333; /* Dark text for better contrast */
+}
+
+select:focus, input[type="number"]:focus {
+    border-color: #4a90e2; /* Blue color for focus */
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.7); /* More pronounced glow effect on focus */
+}
+
+/* Placeholder Styling */
+input[type="number"]::placeholder {
+    color: #aaa; /* Lighter color for placeholder text */
 }
 
 input[type="submit"] {
-    background-color: #333;
+    background: linear-gradient(135deg, #4a90e2, #50e3c2); /* Gradient background */
     color: #fff;
+    padding: 10px 20px; /* Ample padding for a better click area */
     cursor: pointer;
     border: none;
+    border-radius: 20px; /* Slightly rounded corners */
+    font-size: 1em; /* Bigger font size */
+    transition: all 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    outline: none; /* Removing the default outline */
+    display: block;
+    margin: 0 auto;
 }
 
 input[type="submit"]:hover {
-    background-color: #555;
+    background: linear-gradient(120deg, #50e3c2, #4a90e2); /* Switch gradient colors on hover */
+    transform: translateY(-2px); /* Slight move upwards */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
 }
+
+input[type="submit"]:active {
+    transform: translateY(1px); /* Push effect on active/click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Less shadow on active/click */
+}
+
+input[type="submit"]:focus {
+    box-shadow: 0 0 0 2px #4a90e2; /* Blue glow effect on focus for accessibility */
+}
+
 
 h2 {
     text-align: center;
@@ -68,45 +150,90 @@ p {
     margin-top: 10px;
 }
 
-/* Prediction Result Styling */
 .result-section {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    text-align: center;
+    display: none;
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px 30px; /* Padding for spacing */
+    margin-top: 20px; /* Margin to separate from other content */
+    transition: all 0.3s ease; /* Smooth transition for any changes */
 }
 
 .result-section h2 {
-    color: #333;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+    color: #333; /* Darker text color */
+    border-bottom: 1px solid #eaeaea; /* Light border at the bottom */
+    padding-bottom: 10px; /* Padding for spacing */
+    margin-bottom: 20px; /* Margin to separate from paragraph */
+    font-weight: 600; /* Slightly bolder text */
+    text-align: center;
+    font-size: 1.8em; /* Slightly bigger for emphasis */
 }
 
 .result-section p {
-    font-size: 1.8em;
-    color: #e74c3c; /* This will give the prediction a red hue for emphasis. Adjust the color if needed. */
-    margin-top: 15px;
+    color: #2c3e50; /* Deep blue color */
+    font-size: 1.5em; /* Larger font size for emphasis */
+    font-weight: 500; /* Medium boldness for text */
+    text-align: center;
+    margin-top: 20px; /* Margin for spacing */
+    padding: 10px 0; /* Padding for more balanced spacing */
+    border-top: 2px solid #eaeaea; /* A light border above the probability to separate it from the title */
+    border-radius: 4px; /* Rounded corners for the probability section */
 }
+
 
 /* Footer styles */
 .footer {
     padding: 20px 0;
-    background-color: #333;
+    background: linear-gradient(90deg, #333, #444); /* Gradient background for dynamic feel */
     color: #fff;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.9em;
+    font-weight: 500; /* Medium font weight for a bit of emphasis */
+    border-top: 3px solid #FFD700; /* Slightly thicker top border for more definition */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow at the top to give depth */
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #FFD700;
+    border-radius: 2px;
 }
 
 .footer a {
     color: #FFD700;  /* Gold color for links */
     text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
+    margin: 0 12px; /* Slightly increased spacing for better separation */
+    padding: 2px 0; /* Padding for the underline effect */
+    transition: all 0.3s; /* Transition for smooth effects */
+    position: relative;
+}
+
+.footer a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #FFD700;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
 }
 
 .footer a:hover {
     color: #ffffff;  /* White color on hover */
+}
+
+.footer a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
