@@ -1,10 +1,12 @@
 # Stroke Prediction
 
+![Stroke](docs/img/Stroke.png)
+
 Stroke Prediction is a project that aims to predict the likelihood of a stroke based on various input features such as age, gender, health conditions, and lifestyle factors. The model is built using a Bayesian Network and trained on data sourced from Kaggle. This README provides a comprehensive guide on how to set up, train, and verify the model.
 
+This project has also won the Best Project Award amount all the teams for NUS CS3264, Foundation of Artificial Intelligence.
 
-
-![Stroke](docs/img/Stroke.png)
+![Stroke](docs/img/Award.png)
 
 
 Please refer to the [full report](docs/Report.pdf) for more information about the tool and the model.

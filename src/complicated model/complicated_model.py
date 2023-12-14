@@ -25,10 +25,12 @@ edges = [
     ("gender", "isPrivate"),
     ("gender", "bmi"),
     ("gender", "stroke"),
+    ("gender", "heart_disease"),  # Added edge
 
     # Marital and residence factors
     ("ever_married", "Residence_type"),
     ("Residence_type", "stroke"),
+    ("ever_married", "bmi"),  # Added edge
 
     # Employment type based on age and marital status
     ("age", "isSelfEmployed"),
@@ -43,6 +45,7 @@ edges = [
     # Smoking status influences hypertension and heart disease
     ("smoking_status", "hypertension"),
     ("smoking_status", "heart_disease"),
+    ("Residence_type", "smoking_status"),  # Added edge
 
     # BMI also influences hypertension and heart disease
     ("bmi", "hypertension"),
@@ -50,7 +53,8 @@ edges = [
 
     # Glucose level might influence bmi and hypertension
     ("avg_glucose_level", "bmi"),
-    ("avg_glucose_level", "hypertension")
+    ("avg_glucose_level", "hypertension"),
+    ("age", "avg_glucose_level"),  # Added edge
 ]
 
 # Define the Bayesian model structure based on the provided edges
