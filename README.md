@@ -16,8 +16,6 @@ Please refer to the [full report](docs/Report.pdf) for more information about th
 - [Installation](#installation)
 - [Usage](#usage)
 - [Files in the Repository](#files-in-the-repository)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Dataset
 
